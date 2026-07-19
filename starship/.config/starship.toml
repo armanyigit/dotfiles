@@ -20,6 +20,7 @@ $haskell\
 $python\
 [](fg:color_blue bg:color_bg3)\
 [](fg:color_bg3)\
+$cmd_duration\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
@@ -75,6 +76,12 @@ style = "fg:color_fg0 bg:color_yellow"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
+home_symbol = " ~"
+read_only = "  "
+
+[cmd_duration]
+min_time = 2000
+format = " took [$duration](bold color_orange)"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
