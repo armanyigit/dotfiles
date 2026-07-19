@@ -106,4 +106,6 @@ export PATH="$HOME/.local/bin:$PATH"
 #1. Add wezterm CLI to PATH (so nvim can call it) — add this to ~/.zshrc:
 export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 
+bindkey '^ ' autosuggest-accept
+
 eval "$(starship init zsh)"
