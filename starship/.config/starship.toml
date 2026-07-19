@@ -1,9 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = false
+add_newline = true
+
+right_format = "$status$jobs"
 
 format = """
-[](color_yellow)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
@@ -75,7 +76,7 @@ format = '[ $user ]($style)'
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
-format = "[$path ]($style)"
+format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = ""
 home_symbol = "~"
@@ -99,6 +100,7 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_aqua"
+stashed = '*${count}'
 format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 [nodejs]
@@ -180,9 +182,23 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+success_symbol = '[▶](bold fg:color_green)'
+error_symbol = '[▶](bold fg:color_red)'
+vimcmd_symbol = '[◀](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[◀](bold fg:color_purple)'
+vimcmd_replace_symbol = '[◀](bold fg:color_purple)'
+vimcmd_visual_symbol = '[◀](bold fg:color_yellow)'
+
+[status]
+disabled = false
+format = "[$symbol]($style)"
+success_symbol = "[✔](bold fg:color_green)"
+symbol = "[✘](bold fg:color_red)"
+style = ""
+
+[jobs]
+disabled = false
+symbol = "⚙"
+style = "bold fg:color_orange"
+format = "[$symbol$number]($style)"
+number_threshold = 1
