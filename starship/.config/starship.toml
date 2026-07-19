@@ -1,5 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = false
+
 format = """
 [](color_yellow)\
 $directory\
@@ -73,10 +75,10 @@ format = '[ $user ]($style)'
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
-format = "[ $path ]($style)"
+format = "[$path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
-home_symbol = " ~"
+truncation_symbol = ""
+home_symbol = "~"
 read_only = "  "
 
 [cmd_duration]
